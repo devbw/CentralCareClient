@@ -1,0 +1,31 @@
+.navigation-bar {
+  display: flex;
+  width: 100%;
+  padding: .8rem 2rem;
+  top: 0;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background: $color-1;
+
+  .centralcare{
+    color: white;
+    font-size: 1.5rem;
+  }
+  .nav-list{
+    display: flex;
+  }
+  .nav-item{
+    color: white;
+    margin: 0 .5rem;
+    transition: .8s;
+    &:hover{
+      transform: translateY(5px);
+      color: $color-2;
+    }
+  }
+
+  .nav-active p{
+    color: $color-2;
+  }
+}
