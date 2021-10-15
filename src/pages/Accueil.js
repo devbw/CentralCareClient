@@ -21,7 +21,7 @@ const Accueil = () => {
           </div>
           <div className="benefits">
             <div className="circle"><span>2</span></div>
-            <p>Je poste ou réponds à un annonce</p>
+            <p>Je poste ou réponds à une annonce</p>
           </div>
           <div className="benefits">
             <div className="circle"><span>3</span></div>
