@@ -26,7 +26,7 @@
   .home-trapezoid{
     width: 100%;
     clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 85%);
-    padding: 8rem 0;
+    padding: 15rem 0;
     background: white;
     text-align: center;
     h2{
@@ -37,13 +37,14 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 4rem 0;
+      margin: 4rem 0 2rem 0;
       padding: 0 2rem;
       .benefits{
         display: flex;
         flex-direction: column;
         align-items: center;
         min-width: 33%;
+        margin: 1rem 0;
         .circle{
           height: 80px;
           width: 80px;
@@ -53,7 +54,6 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          animation: animate 3s linear infinite;
           span{
             color: white;
             font-size: 1.8rem;
@@ -66,17 +66,6 @@
           font-size: 1.2rem;
         }
       }
-    }
-  }
-  @keyframes animate {
-    0%{
-      transform: translateY(0px);
-    }
-    50%{
-      transform: translateY(10px);
-    }
-    100%{
-      transform: translateY(0px);
     }
   }
 }

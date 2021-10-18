@@ -24,6 +24,9 @@ const navigation = () => {
           <p className="nav-item">Contact</p>
         </NavLink>
       </nav>
+      <div className="nav-bars">
+        <i class="fas fa-bars"></i>
+      </div>
     </div>
   );
 };
