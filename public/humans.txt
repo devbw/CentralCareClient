@@ -1,0 +1,19 @@
+/* SITE */
+Site name: Central Care
+Site URL: https://centralcare.fr
+Built with: React
+
+/* TEAM */
+Chef de projet: Brian
+Pays: France
+
+Développeuse: Anne-Marie
+Pays: France
+
+Développeur: Pierrick
+Pays: France
+
+                         
+                
+                        
+
