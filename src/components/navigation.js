@@ -14,13 +14,13 @@ const navigation = () => {
         <NavLink exact to="/annonces" activeClassName="nav-active">
           <p className="nav-item">Annonces</p>
         </NavLink>
-        <NavLink exact to="/annonces" activeClassName="nav-active">
+        <NavLink exact to="/a-propos" activeClassName="nav-active">
           <p className="nav-item">Qui sommes-nous</p>
         </NavLink>
-        <NavLink exact to="/annonces" activeClassName="nav-active">
+        <NavLink exact to="/partenaires" activeClassName="nav-active">
           <p className="nav-item">Partenaires</p>
         </NavLink>
-        <NavLink exact to="/annonces" activeClassName="nav-active">
+        <NavLink exact to="/contact" activeClassName="nav-active">
           <p className="nav-item">Contact</p>
         </NavLink>
       </nav>
