@@ -1,7 +1,7 @@
 .navigation-bar {
   display: flex;
   width: 100%;
-  padding: .8rem 2rem;
+  padding: 0.8rem 2rem;
   top: 0;
   position: fixed;
   justify-content: space-between;
@@ -10,34 +10,37 @@
   z-index: 1;
 
   @media screen and (max-width: 800px) {
-    padding: .8rem 1rem;
+    padding: 0.8rem 1rem;
   }
 
-  .centralcare{
+  .centralcare {
     color: white;
     font-size: 1.5rem;
+    @media screen and (max-width: 800px) {
+      font-size: 1.2rem;
+    }
   }
-  .nav-list{
+  .nav-list {
     display: flex;
     @media screen and (max-width: 800px) {
       display: none;
     }
   }
-  .nav-item{
+  .nav-item {
     color: white;
-    margin: 0 .7rem;
-    transition: .8s;
-    &:hover{
+    margin: 0 0.7rem;
+    transition: 0.8s;
+    &:hover {
       transform: translateY(5px);
       color: $color-2;
     }
   }
 
-  .nav-active p{
+  .nav-active p {
     color: $color-2;
   }
 
-  .nav-bars{
+  .nav-bars {
     color: white;
     display: none;
     @media screen and (max-width: 800px) {
