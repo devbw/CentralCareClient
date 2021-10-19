@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Signuppro from './SignupForm/Signuppro';
+import Signupuser from './SignupForm/Signupuser'
 
 const Signup = () => {
 
@@ -17,107 +19,9 @@ const Signup = () => {
   let showConditionnal;
 
   if (user) {
-    showConditionnal =       <form>
-    <label htmlFor="firstname">Prénom</label>
-    <input
-      type="text"
-      name="firstname"
-      id="firstname"
-      placeholder="Ex: Jeanne"
-      required
-    />
-    <label htmlFor="lastname">Nom</label>
-    <input
-      type="text"
-      name="lastname"
-      id="lastname"
-      placeholder="Ex: Dupuis"
-      required
-    />
-    <label htmlFor="email">Email</label>
-    <input
-      type="email"
-      name="email"
-      id="email"
-      placeholder="exemple@gmail.com"
-      required
-    />
-    <label htmlFor="password">Mot de passe</label>
-    <input
-      type="password"
-      name="password"
-      id="password"
-      placeholder="Votre mot de passe"
-      required
-    />
-    <label htmlFor="confirm">Confirmer</label>
-    <input
-      type="password"
-      name="confirm"
-      id="confirm"
-      placeholder="Confirmer mot de passe"
-      required
-    />
-    <div className="cgu">
-      <input type="checkbox" name="acceptcgu" checked required/>
-      <span>J'ai lu et j'accepte les <a href="/">CGU</a></span>
-    </div>
-    <button type="submit">
-    <i className="fas fa-user-plus"></i>
-      M'INSCRIRE
-    </button>
-  </form>;
+    showConditionnal = <Signupuser />;
   } else {
-    showConditionnal =       <form>
-    <label htmlFor="socialreason">Raison Sociale</label>
-    <input
-      type="text"
-      name="socialreason"
-      id="socialreason"
-      placeholder="Raison sociale"
-      required
-    />
-    <label htmlFor="siret">N°SIRET</label>
-    <input
-      type="text"
-      name="siret"
-      id="siret"
-      placeholder="N°SIRET"
-      required
-    />
-    <label htmlFor="email">Email</label>
-    <input
-      type="email"
-      name="email"
-      id="email"
-      placeholder="exemple@gmail.com"
-      required
-    />
-    <label htmlFor="password">Mot de passe</label>
-    <input
-      type="password"
-      name="password"
-      id="password"
-      placeholder="Votre mot de passe"
-      required
-    />
-    <label htmlFor="confirm">Confirmer</label>
-    <input
-      type="password"
-      name="confirm"
-      id="confirm"
-      placeholder="Confirmer mot de passe"
-      required
-    />
-    <div className="cgu">
-      <input type="checkbox" name="acceptcgu" checked required/>
-      <span>J'ai lu et j'accepte les <a href="/">CGU</a></span>
-    </div>
-    <button type="submit">
-    <i className="fas fa-user-plus"></i>
-      M'INSCRIRE
-    </button>
-  </form>;
+    showConditionnal = <Signuppro />;
   }
 
   return (
