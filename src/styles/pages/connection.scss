@@ -32,6 +32,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
       h2{
         margin-bottom: 3rem;
       }
@@ -41,14 +42,17 @@
         align-items: center;
         margin: 1.5rem 0.5rem;
         input{
-          background: $color-1;
           border-radius: 10px;
           padding: 1rem 2rem;
           margin-bottom: 1rem;
-          color: $white;
+          border: 2px $color-2 solid;
+          color: $color-2;
           &::placeholder{
-            color: $white;
+            color: $color-2;
           }
+        }
+        label{
+          color: rgba(0, 0, 0, 0.75);
         }
         button{
           background: $color-2;
@@ -61,6 +65,8 @@
           justify-content: center;
           cursor: pointer;
           transition: .3s;
+          margin-top: 1rem;
+          box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
           &:hover {
             transform: translateY(5px);
           }
