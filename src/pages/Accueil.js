@@ -13,28 +13,30 @@ const Accueil = () => {
         </h1>
       </div>
       <HomeButton />
-      <div className="home-trapezoid">
-        <h2>
-          Comment fonctionne <br /> la plateforme ?
-        </h2>
-        <div className="home-benefits fade-in-bottom">
-          <div className="benefits">
-            <div className="circle">
-              <span>1</span>
+      <div className="home-wrapper">
+        <div className="home-trapezoid">
+          <h2>
+            Comment fonctionne <br /> la plateforme ?
+          </h2>
+          <div className="home-benefits fade-in-bottom">
+            <div className="benefits">
+              <div className="circle">
+                <span>1</span>
+              </div>
+              <p>Je m'inscris sur la plateforme</p>
             </div>
-            <p>Je m'inscris sur la plateforme</p>
-          </div>
-          <div className="benefits">
-            <div className="circle">
-              <span>2</span>
+            <div className="benefits">
+              <div className="circle">
+                <span>2</span>
+              </div>
+              <p>Je poste ou réponds à une annonce</p>
             </div>
-            <p>Je poste ou réponds à une annonce</p>
-          </div>
-          <div className="benefits">
-            <div className="circle">
-              <span>3</span>
+            <div className="benefits">
+              <div className="circle">
+                <span>3</span>
+              </div>
+              <p>Je trouve mon intervenant ou bénéficiaire</p>
             </div>
-            <p>Je trouve mon intervenant ou bénéficiaire</p>
           </div>
         </div>
       </div>
