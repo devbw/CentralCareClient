@@ -11,6 +11,7 @@ const Connect = () => {
               <button>CONNEXION</button>
               <button>INSCRIPTION</button>
           </div>
+          <div className="divider"></div>
           <form>
             <label for="email">Email</label>
             <input type="email" name="email" id="email" placeholder="exemple@gmail.com" required/>
