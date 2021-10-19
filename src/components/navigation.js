@@ -25,7 +25,7 @@ const navigation = () => {
         </NavLink>
       </nav>
       <div className="nav-bars">
-        <i class="fas fa-bars"></i>
+        <i className="fas fa-bars"></i>
       </div>
     </div>
   );

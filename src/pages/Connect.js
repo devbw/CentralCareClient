@@ -1,27 +1,40 @@
-import React from 'react';
+import React, { useState } from "react";
 import Navigation from "../components/navigation";
+import Signin from "../components/Log/signin";
+import Signup from "../components/Log/Signup";
 
 const Connect = () => {
+  const [login, setLogin] = useState(true);
+  const [, setRegister] = useState(false);
+
+  const stateLogin = () => {
+    setLogin(true);
+    setRegister(false);
+  };
+  const stateRegister = () => {
+    setLogin(false);
+    setRegister(true);
+  };
+
+  let showConditionnal;
+
+  if (login) {
+    showConditionnal = <Signin/>;
+  } else {
+    showConditionnal = <Signup/>;
+  }
+
   return (
     <div className="login-register-container">
       <Navigation />
       <div className="connection-container">
         <div className="connection-login fade-in-bottom">
           <div className="connection-button">
-              <button>CONNEXION</button>
-              <button>INSCRIPTION</button>
+            <button onClick={stateLogin}>CONNEXION</button>
+            <button onClick={stateRegister}>INSCRIPTION</button>
           </div>
           <div className="divider"></div>
-          <form>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="exemple@gmail.com" required/>
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" id="password" placeholder="Votre mot de passe" required/>
-            <button type="submit">
-              <i class="fas fa-rocket"></i>
-              CONNEXION
-            </button>
-          </form>
+          {showConditionnal}
         </div>
       </div>
     </div>
