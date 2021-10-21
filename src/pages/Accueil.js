@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../components/navigation";
 import HomeButton from "../components/homeButton";
+import Footer from "../components/footer";
 
 const Accueil = () => {
   return (
@@ -79,6 +80,7 @@ const Accueil = () => {
         <h2>C'est parti !</h2>
       </div>
       <HomeButton />
+      <Footer />
     </div>
   );
 };

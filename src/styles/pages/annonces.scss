@@ -1,0 +1,36 @@
+.container-adverts{
+  .adverts-filter{
+    margin: 10rem auto 3rem auto;
+    width: 90%;
+    max-width: 1100px;
+    background: $white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    .filter{
+      margin: .5rem;
+      min-width: 200px;
+      width: 400px;
+      input{
+        padding:.5rem;
+        width: 100%;
+        border: 2px $color-2 solid;
+        border-radius: 10px;
+        &::placeholder{
+          color: $color-2;
+        }
+      }
+      button{
+        background: $color-2;
+        border-radius: 10px;
+        padding: .5rem;
+        color: $white;
+        .span{
+          padding: .3rem;
+        }
+      }
+    }
+  }
+}
