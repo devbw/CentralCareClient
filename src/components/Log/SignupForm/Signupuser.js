@@ -45,7 +45,7 @@ const Signupuser = () => {
           required
         />
         <div className="cgu">
-          <input type="checkbox" name="acceptcgu" checked required />
+          <input type="checkbox" name="acceptcgu" defaultChecked required />
           <span>
             J'ai lu et j'accepte les <a href="/">CGU</a>
           </span>

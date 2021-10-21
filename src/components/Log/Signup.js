@@ -5,7 +5,7 @@ import Signupuser from './SignupForm/Signupuser'
 const Signup = () => {
 
   const [user, setUser] = useState(true);
-  const [proUser, setProUser] = useState(false);
+  const [, setProUser] = useState(false);
 
   const stateUser = () => {
     setUser(true);
@@ -32,7 +32,7 @@ const Signup = () => {
           <div className="circle">
             <i className="fas fa-users"></i>
           </div>
-          <p>Intervenant <br/> Bénéficiaire</p>
+          <p>Intervenant <br/> ou Bénéficiaire</p>
         </div>
         <div className="circle-choice" onClick={stateProUser}>
           <div className="circle">

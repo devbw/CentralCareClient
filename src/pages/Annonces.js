@@ -3,9 +3,11 @@ import Navigation from '../components/navigation'
 
 const Annonces = () => {
   return (
-    <div>
+    <div className="container-adverts">
       <Navigation/>
-      Bienvenue dans les annonces
+      <div className="adverts-filter">
+        
+      </div>
     </div>
   );
 };
