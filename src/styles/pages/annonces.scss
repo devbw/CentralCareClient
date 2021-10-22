@@ -8,28 +8,34 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     padding: .5rem;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    .filter{
+    input{
+      padding:.5rem;
       margin: .5rem;
       min-width: 200px;
-      width: 400px;
-      input{
-        padding:.5rem;
-        width: 100%;
-        border: 2px $color-2 solid;
-        border-radius: 10px;
-        &::placeholder{
-          color: $color-2;
-        }
+      width: 41%;
+      border: 2px $color-2 solid;
+      border-radius: 10px;
+      &::placeholder{
+        color: $color-2;
       }
-      button{
-        background: $color-2;
-        border-radius: 10px;
-        padding: .5rem;
-        color: $white;
-        .span{
-          padding: .3rem;
-        }
+    }
+    button{
+      background: $color-2;
+      border-radius: 10px;
+      padding: .5rem;
+      color: $white;
+      cursor: pointer;
+      transition: .3s;
+      height: 35px;
+      margin: .2rem .5rem;
+      &:hover{
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        transform: translateY(2px);
+      }
+      .fas{
+        margin-right: .5rem;
       }
     }
   }
