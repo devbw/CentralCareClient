@@ -1,15 +1,26 @@
 .container-adverts{
   .adverts-filter{
+    position: relative;
     margin: 10rem auto 3rem auto;
     width: 90%;
     max-width: 1100px;
     background: $white;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    padding: .5rem;
+    padding: 2.5rem .5rem 1rem .5rem;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    .adverts-publish{
+      position: absolute;
+      top: -20px;
+      left: 45%;
+      background: #FFA463;
+      height: 40px;
+      width: 100px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+    }
     input{
       padding:.5rem;
       margin: .5rem;
@@ -31,7 +42,6 @@
       height: 35px;
       margin: .2rem .5rem;
       &:hover{
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         transform: translateY(2px);
       }
       .fas{

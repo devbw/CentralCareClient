@@ -7,6 +7,10 @@ const Annonces = () => {
     <div className="container-adverts">
       <Navigation/>
       <div className="adverts-filter">
+        <button className="adverts-publish">
+          <i className="fas fa-plus"></i>
+          PUBLIER
+        </button>
         <input type="text" className="search" placeholder="Votre recherche"/>
         <input type="text" className="city" placeholder="Ville, Ex : Aix-en-Provence"/>
         <div className="filter">
