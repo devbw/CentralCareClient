@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import axios from "axios";
 
 const Signuppro = () => {
 
@@ -6,6 +7,22 @@ const Signuppro = () => {
   const [siret, setSiret] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const signup = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost:3003/users', {
+      reason,
+      siret,
+      email,
+      password
+    })
+    .then(() => {
+      console.log("Utilisateur professionnel inscrit avec succès !")
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
 
 
   return (
@@ -17,6 +34,7 @@ const Signuppro = () => {
           name="socialreason"
           id="socialreason"
           placeholder="Raison sociale"
+          onChange={(e) => setReason(e.target.value)}
           required
         />
         <label htmlFor="siret">N°SIRET</label>
@@ -25,6 +43,7 @@ const Signuppro = () => {
           name="siret"
           id="siret"
           placeholder="N°SIRET"
+          onChange={(e) => setSiret(e.target.value)}
           required
         />
         <label htmlFor="email">Email</label>
@@ -33,6 +52,7 @@ const Signuppro = () => {
           name="email"
           id="email"
           placeholder="exemple@gmail.com"
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
         <label htmlFor="password">Mot de passe</label>
@@ -41,6 +61,7 @@ const Signuppro = () => {
           name="password"
           id="password"
           placeholder="Votre mot de passe"
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
         <label htmlFor="confirm">Confirmer</label>
@@ -57,7 +78,7 @@ const Signuppro = () => {
             J'ai lu et j'accepte les <a href="/">CGU</a>
           </span>
         </div>
-        <button type="submit">
+        <button type="submit" onClick={signup}>
           <i className="fas fa-user-plus"></i>
           M'INSCRIRE
         </button>
