@@ -14,7 +14,8 @@ const Signupuser = () => {
       firstname,
       lastname,
       email,
-      password
+      password,
+      date: new Date()
     })
     .then(() => {
       console.log("Utilisateur inscrit avec succès !")
@@ -33,6 +34,7 @@ const Signupuser = () => {
           name="firstname"
           id="firstname"
           placeholder="Ex: Jeanne"
+          min="2"
           onChange={(e) => setFirstname(e.target.value)}
           required
         />
@@ -42,6 +44,7 @@ const Signupuser = () => {
           name="lastname"
           id="lastname"
           placeholder="Ex: Dupuis"
+          min="2"
           onChange={(e) => setLastname(e.target.value)}
           required
         />
@@ -60,6 +63,7 @@ const Signupuser = () => {
           name="password"
           id="password"
           placeholder="Votre mot de passe"
+          min="8"
           onChange={(e) => setPassword(e.target.value)}
           required
         />

@@ -10,11 +10,12 @@ const Signuppro = () => {
 
   const signup = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3003/users', {
+    axios.post('http://localhost:3003/pro', {
       reason,
       siret,
       email,
-      password
+      password,
+      date: new Date()
     })
     .then(() => {
       console.log("Utilisateur professionnel inscrit avec succès !")
@@ -34,6 +35,7 @@ const Signuppro = () => {
           name="socialreason"
           id="socialreason"
           placeholder="Raison sociale"
+          min="2"
           onChange={(e) => setReason(e.target.value)}
           required
         />
@@ -43,6 +45,7 @@ const Signuppro = () => {
           name="siret"
           id="siret"
           placeholder="N°SIRET"
+          min="14"
           onChange={(e) => setSiret(e.target.value)}
           required
         />
@@ -61,6 +64,7 @@ const Signuppro = () => {
           name="password"
           id="password"
           placeholder="Votre mot de passe"
+          min="8"
           onChange={(e) => setPassword(e.target.value)}
           required
         />
