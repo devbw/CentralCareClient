@@ -35,7 +35,7 @@ const Signuppro = () => {
           name="socialreason"
           id="socialreason"
           placeholder="Raison sociale"
-          min="2"
+          minlength="2"
           onChange={(e) => setReason(e.target.value)}
           required
         />
@@ -45,7 +45,7 @@ const Signuppro = () => {
           name="siret"
           id="siret"
           placeholder="N°SIRET"
-          min="14"
+          minlength="14"
           onChange={(e) => setSiret(e.target.value)}
           required
         />
@@ -64,7 +64,7 @@ const Signuppro = () => {
           name="password"
           id="password"
           placeholder="Votre mot de passe"
-          min="8"
+          minlength="8"
           onChange={(e) => setPassword(e.target.value)}
           required
         />

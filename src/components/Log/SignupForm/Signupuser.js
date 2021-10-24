@@ -34,7 +34,7 @@ const Signupuser = () => {
           name="firstname"
           id="firstname"
           placeholder="Ex: Jeanne"
-          min="2"
+          minlength="2"
           onChange={(e) => setFirstname(e.target.value)}
           required
         />
@@ -44,7 +44,7 @@ const Signupuser = () => {
           name="lastname"
           id="lastname"
           placeholder="Ex: Dupuis"
-          min="2"
+          minlength="2"
           onChange={(e) => setLastname(e.target.value)}
           required
         />
@@ -63,7 +63,7 @@ const Signupuser = () => {
           name="password"
           id="password"
           placeholder="Votre mot de passe"
-          min="8"
+          minlength="8"
           onChange={(e) => setPassword(e.target.value)}
           required
         />
