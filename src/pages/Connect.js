@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navigation from "../components/navigation";
-import Signin from "../components/Log/signin";
+import Signin from "../components/Log/Signin";
 import Signup from "../components/Log/Signup";
 
 const Connect = () => {
