@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import validator from "validator";
 
 const Signuppro = () => {
 
@@ -7,9 +8,43 @@ const Signuppro = () => {
   const [siret, setSiret] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const signup = (e) => {
     e.preventDefault();
+    if (!validator.isEmail(email)) {
+      setError("Email non conforme !");
+      console.log(error);
+      return error;
+    }
+    if (
+      validator.isStrongPassword(password, {
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+        returnScore: false,
+      }) === false
+    ) {
+      setError(
+        "Le mot de passe doit comporter 8 caractères minimum, 1 minuscule, 1 majuscule, 1 chiffre et 1 symbole"
+      );
+      console.log(error);
+      return error;
+    }
+    if (validator.isLength(reason, { min: 2 }) === false) {
+      setError("La raison sociale doit comporter au moins 2 caractères");
+      return error;
+    }
+    if(validator.isNumeric(siret) === false) {
+      setError("Le N°SIRET doit comporter uniquement des chiffres");
+      return error;
+    }
+    if (validator.isLength(siret, { min: 14, max: 14 }) === false) {
+      setError("Le N°SIRET doit comporter 14 chiffres");
+      return error;
+    }
     axios.post('http://localhost:3003/pro', {
       reason,
       siret,
@@ -18,6 +53,7 @@ const Signuppro = () => {
       date: new Date()
     })
     .then(() => {
+      setError("");
       console.log("Utilisateur professionnel inscrit avec succès !")
     })
     .catch((error) => {
@@ -29,6 +65,7 @@ const Signuppro = () => {
   return (
     <div>
       <form>
+        <p className="form-error">{error}</p>
         <label htmlFor="socialreason">Raison Sociale</label>
         <input
           type="text"
