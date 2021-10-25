@@ -35,17 +35,17 @@
       }
     }
   }
+  input{
+    margin: .1rem 0 0 0;
+    &:invalid{
+      border: 2px dashed red;
+    }
+  }
   .cgu{
     display: flex;
     span{
       font-size: .8rem;
       margin-left: .2rem;
-    }
-    input{
-      margin: .1rem 0 0 0;
-      &:invalid{
-        border: 2px dashed red;
-      }
     }
   }
 }
