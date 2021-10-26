@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import validator from "validator";
+import Error from "../../errors/Error";
 
 const Signuppro = () => {
 
@@ -9,12 +10,13 @@ const Signuppro = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showError, setShowError] = useState(false);
 
   const signup = (e) => {
     e.preventDefault();
     if (!validator.isEmail(email)) {
       setError("Email non conforme !");
-      console.log(error);
+      setShowError(true);
       return error;
     }
     if (
@@ -28,21 +30,24 @@ const Signuppro = () => {
       }) === false
     ) {
       setError(
-        "Le mot de passe doit comporter 8 caractères minimum, 1 minuscule, 1 majuscule, 1 chiffre et 1 symbole"
+        "Le mot de passe doit comporter 8 caractères minimum, 1 minuscule, 1 majuscule, 1 chiffre et 1 symbole !"
       );
-      console.log(error);
+      setShowError(true);
       return error;
     }
     if (validator.isLength(reason, { min: 2 }) === false) {
-      setError("La raison sociale doit comporter au moins 2 caractères");
+      setError("La raison sociale doit comporter au moins 2 caractères !");
+      setShowError(true);
       return error;
     }
     if(validator.isNumeric(siret) === false) {
-      setError("Le N°SIRET doit comporter uniquement des chiffres");
+      setError("Le N°SIRET doit comporter uniquement des chiffres !");
+      setShowError(true);
       return error;
     }
     if (validator.isLength(siret, { min: 14, max: 14 }) === false) {
       setError("Le N°SIRET doit comporter 14 chiffres");
+      setShowError(true);
       return error;
     }
     axios.post('http://localhost:3003/pro', {
@@ -54,6 +59,7 @@ const Signuppro = () => {
     })
     .then(() => {
       setError("");
+      setShowError(false);
       console.log("Utilisateur professionnel inscrit avec succès !")
     })
     .catch((error) => {
@@ -65,7 +71,7 @@ const Signuppro = () => {
   return (
     <div>
       <form>
-        <p className="form-error">{error}</p>
+        {showError ? <Error error={error} /> : ''}
         <label htmlFor="socialreason">Raison Sociale</label>
         <input
           type="text"

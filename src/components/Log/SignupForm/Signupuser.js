@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import validator from "validator";
+import Error from "../../errors/Error";
 
 const Signupuser = () => {
   const [firstname, setFirstname] = useState("");
@@ -8,12 +9,23 @@ const Signupuser = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showError, setShowError] = useState(false);
 
   const signup = (e) => {
     e.preventDefault();
+    if (validator.isLength(firstname, { min: 2 }) === false) {
+      setError("Le prénom doit comporter au moins 2 caractères !");
+      setShowError(true);
+      return error;
+    }
+    if (validator.isLength(lastname, { min: 2 }) === false) {
+      setError("Le nom doit comporter au moins 2 caractères !");
+      setShowError(true);
+      return error;
+    }
     if (!validator.isEmail(email)) {
       setError("Email non conforme !");
-      console.log(error);
+      setShowError(true);
       return error;
     }
     if (
@@ -27,17 +39,9 @@ const Signupuser = () => {
       }) === false
     ) {
       setError(
-        "Le mot de passe doit comporter 8 caractères minimum, 1 minuscule, 1 majuscule, 1 chiffre et 1 symbole"
+        "Le mot de passe doit comporter 8 caractères minimum, 1 minuscule, 1 majuscule, 1 chiffre et 1 symbole !"
       );
-      console.log(error);
-      return error;
-    }
-    if (validator.isLength(firstname, { min: 2 }) === false) {
-      setError("Le prénom doit comporter au moins 2 caractères");
-      return error;
-    }
-    if (validator.isLength(lastname, { min: 2 }) === false) {
-      setError("Le nom doit comporter au moins 2 caractères");
+      setShowError(true);
       return error;
     }
     axios
@@ -50,6 +54,7 @@ const Signupuser = () => {
       })
       .then(() => {
         console.log("Utilisateur inscrit avec succès !");
+        setShowError(false);
         setError("");
       })
       .catch((error) => {
@@ -60,7 +65,7 @@ const Signupuser = () => {
   return (
     <div>
       <form>
-        <p className="form-error">{error}</p>
+        {showError ? <Error error={error} /> : ''}
         <label htmlFor="firstname">Prénom</label>
         <input
           type="text"
