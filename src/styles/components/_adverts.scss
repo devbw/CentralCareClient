@@ -1,0 +1,14 @@
+.adverts{
+  background: $white;
+  width: 350px;
+  height: 150px;
+  padding: .5rem;
+  margin: .5rem;
+  .top-adverts{
+    display: flex;
+    justify-content: space-between;
+  }
+  .category-adverts{
+    display: flex;
+  }
+}

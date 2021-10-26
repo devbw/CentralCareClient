@@ -43,7 +43,7 @@ const Accueil = () => {
       </div>
       <div className="home-infos ">
         <div className="home-info">
-          <i class="fas fa-atom"></i>
+          <i className="fas fa-atom"></i>
           <div className="home-card">
             <h3>Pourquoi cette plateforme ?</h3>
             <p>
@@ -54,7 +54,7 @@ const Accueil = () => {
           </div>
         </div>
         <div className="home-info">
-          <i class="fas fa-users"></i>
+          <i className="fas fa-users"></i>
           <div className="home-card">
             <h3>Pour qui est-elle destinée ?</h3>
             <p>
@@ -65,7 +65,7 @@ const Accueil = () => {
           </div>
         </div>
         <div className="home-info">
-          <i class="fas fa-rocket"></i>
+          <i className="fas fa-rocket"></i>
           <div className="home-card">
             <h3>Pourquoi s'abonner ?</h3>
             <p>

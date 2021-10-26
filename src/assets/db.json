@@ -33,5 +33,67 @@
       "date": "2021-10-24T18:35:11.690Z",
       "id": "dnPF3Vx"
     }
+  ],
+  "posts":[
+    {
+      "user_id": "Jean",
+      "type": "CDD",
+      "category": "Annonces bénéficiaires",
+      "title": "Contrat CDD auxiliaire de vie",
+      "post_content": "Je cherche un auxiliaire de vie pour m'assister dans les tâches quotidienne, le ménage, courses, hygiène, repassage etc.. De préférence, je souhaite une expérience d'au moins 1 an, permis B obligatoire",
+      "postal_code": "38100",
+      "city": "Grenoble",
+      "price": "12€/h",
+      "date": "2021-10-26T18:35:11.690Z",
+      "id": "1"
+    },
+    {
+      "user_id": "Marie",
+      "type": "CDI",
+      "category": "Annonces intervenants",
+      "title": "Contrat CDD auxiliaire de vie",
+      "post_content": "Je cherche un auxiliaire de vie pour m'assister dans les tâches quotidienne, le ménage, courses, hygiène, repassage etc.. De préférence, je souhaite une expérience d'au moins 1 an, permis B obligatoire",
+      "postal_code": "75000",
+      "city": "Paris",
+      "price": "15€/h",
+      "date": "2021-10-26T18:35:11.690Z",
+      "id": "2"
+    },
+    {
+      "user_id": "Mathilde",
+      "type": "CDD",
+      "category": "Annonces bénéficiaires",
+      "title": "Contrat CDD auxiliaire de vie",
+      "post_content": "Je cherche un auxiliaire de vie pour m'assister dans les tâches quotidienne, le ménage, courses, hygiène, repassage etc.. De préférence, je souhaite une expérience d'au moins 1 an, permis B obligatoire",
+      "postal_code": "38100",
+      "city": "Grenoble",
+      "price": "12€/h",
+      "date": "2021-10-26T18:35:11.690Z",
+      "id": "3"
+    },
+    {
+      "user_id": "Jeanne",
+      "type": "CDD",
+      "category": "Annonces bénéficiaires",
+      "title": "Contrat CDD auxiliaire de vie",
+      "post_content": "Je cherche un auxiliaire de vie pour m'assister dans les tâches quotidienne, le ménage, courses, hygiène, repassage etc.. De préférence, je souhaite une expérience d'au moins 1 an, permis B obligatoire",
+      "postal_code": "38100",
+      "city": "Grenoble",
+      "price": "12€/h",
+      "date": "2021-10-26T18:35:11.690Z",
+      "id": "4"
+    },
+    {
+      "user_id": "Romain",
+      "type": "CDD",
+      "category": "Annonces bénéficiaires",
+      "title": "Contrat CDD auxiliaire de vie",
+      "post_content": "Je cherche un auxiliaire de vie pour m'assister dans les tâches quotidienne, le ménage, courses, hygiène, repassage etc.. De préférence, je souhaite une expérience d'au moins 1 an, permis B obligatoire",
+      "postal_code": "38100",
+      "city": "Grenoble",
+      "price": "12€/h",
+      "date": "2021-10-26T18:35:11.690Z",
+      "id": "5"
+    }
   ]
 }
