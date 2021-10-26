@@ -1,12 +1,21 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import validator from "validator";
+import Error from "../errors/Error";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [showError, setShowError] = useState(false);
 
   const login = (e) => {
     e.preventDefault();
+    if (!validator.isEmail(email)) {
+      setError("Email non conforme !");
+      setShowError(true);
+      return error;
+    }
     axios.post('', {
       email,
       password
@@ -21,6 +30,7 @@ const Signin = () => {
 
   return (
     <form>
+      {showError ? <Error error={error} /> : ''}
       <label htmlFor="email">Email</label>
       <input
         type="email"
