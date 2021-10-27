@@ -10,11 +10,11 @@ const Adverts = (props) => {
       </div>
       <h3 className="mb">{advert.title}</h3>
       <div className="category-adverts mb">
-        <p>Catégorie :</p>
+        <p>Catégorie : </p>
         <p>{advert.category}</p>
       </div>
       <div className="type-adverts mb">
-        <p>Type :</p>
+        <p>Type : </p>
         <p>{advert.type}</p>
       </div>
       <div className="mb">

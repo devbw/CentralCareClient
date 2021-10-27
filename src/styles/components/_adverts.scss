@@ -28,6 +28,19 @@
       opacity: .75;
       cursor: pointer;
     }
+    button{
+      margin-right: .5rem;
+      background: $color-2;
+      color: $white;
+      padding: .5rem .7rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: .3s;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      &:hover{
+        transform: translateY(2px);
+      }
+    }
   }
   .mb{
     margin-bottom: .5rem;
