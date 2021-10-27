@@ -1,42 +1,36 @@
 import React from 'react';
 
 const Adverts = (props) => {
-	const { adverts } = props;
-
-	if (adverts.length > 0) {
-		return adverts.map((advert, index) => {
-			console.log(advert);
-			return (
-				<div className='adverts' key={advert.id}>
-					<div className='top-adverts'>
-						<span>{advert.user_id}</span>
-						<i className='fas fa-ellipsis-h'></i>
-					</div>
-					<h3>{advert.title}</h3>
-					<div className='category-adverts'>
-						<p>Catégorie :</p>
-						<p>{advert.category}</p>
-					</div>
-					<div>
-						<p>Type :</p>
-						<p>{advert.type}</p>
-					</div>
-					<div>{advert.content}</div>
-					<div className='actions'>
-						<div>
-							<button>Voir tout</button>
-							<button>Répondre</button>
-						</div>
-						<div>
-							<i className='far fa-heart'></i>
-						</div>
-					</div>
-				</div>
-			);
-		});
-	} else {
-		return <p>Aucune annonce pour le moment</p>;
-	}
+  const {advert} = props;
+  return (
+    <div className="adverts" key={advert.id}>
+      <div className="top-adverts mb">
+        <span>{advert.user_id}</span>
+        <i className="fas fa-ellipsis-h"></i>
+      </div>
+      <h3 className="mb">{advert.title}</h3>
+      <div className="category-adverts mb">
+        <p>Catégorie :</p>
+        <p>{advert.category}</p>
+      </div>
+      <div className="type-adverts mb">
+        <p>Type :</p>
+        <p>{advert.type}</p>
+      </div>
+      <div className="mb">
+        {advert.post_content}
+      </div>
+      <div className="actions">
+        <div>
+          <button>Voir tout</button>
+          <button>Répondre</button>
+        </div>
+        <div>
+          <i className="far fa-heart"></i>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Adverts;

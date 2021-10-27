@@ -1,14 +1,35 @@
 .adverts{
   background: $white;
   width: 350px;
-  height: 150px;
-  padding: .5rem;
+  padding: .7rem;
   margin: .5rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   .top-adverts{
     display: flex;
     justify-content: space-between;
+    .fas{
+      color: black;
+      opacity: .75;
+      cursor: pointer;
+    }
   }
   .category-adverts{
     display: flex;
+  }
+  .type-adverts{
+    display: flex;
+  }
+  .actions{
+    display: flex;
+    justify-content: space-between;
+    .far{
+      color: #FF0000;
+      opacity: .75;
+      cursor: pointer;
+    }
+  }
+  .mb{
+    margin-bottom: .5rem;
   }
 }
