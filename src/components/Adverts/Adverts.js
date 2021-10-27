@@ -25,9 +25,7 @@ const Adverts = (props) => {
           <button>Voir tout</button>
           <button>Répondre</button>
         </div>
-        <div>
           <i className="far fa-heart"></i>
-        </div>
       </div>
     </div>
   );
