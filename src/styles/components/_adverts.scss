@@ -1,7 +1,7 @@
 .adverts{
   background: $white;
   min-width: 250px;
-  width: 350px;
+  width: 600px;
   padding: .7rem;
   margin: 1rem;
   border-radius: 10px;
@@ -14,12 +14,24 @@
       opacity: .75;
       cursor: pointer;
     }
+    span{
+      color: $color-2;
+      font-size: .9rem;
+    }
   }
   .category-adverts{
     display: flex;
+    font-size: .9rem;
   }
   .type-adverts{
     display: flex;
+    font-size: .9rem;
+  }
+  h3{
+    font-size: 1.1rem;
+  }
+  .content-adverts{
+    font-size: .9rem;
   }
   .actions{
     display: flex;
@@ -45,6 +57,12 @@
     }
   }
   .mb{
-    margin-bottom: .5rem;
+    margin-bottom: .8rem;
+  }
+  .divider{
+    height: 1px;
+    background: $black;
+    width: 90%;
+    opacity: .1;
   }
 }

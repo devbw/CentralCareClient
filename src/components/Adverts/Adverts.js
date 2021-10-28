@@ -5,10 +5,15 @@ const Adverts = (props) => {
   return (
     <div className="adverts" key={advert.id}>
       <div className="top-adverts mb">
-        <span>{advert.user_id}</span>
+        <div>
+          <span>{advert.user_id},&#x20;</span>
+          <span>à {advert.city},</span>
+          <span>&#x20; {advert.postal_code}</span>
+        </div>
         <i className="fas fa-ellipsis-h"></i>
       </div>
       <h3 className="mb">{advert.title}</h3>
+      <div className="divider mb"></div>
       <div className="category-adverts mb">
         <p>Catégorie : </p>
         <p>{advert.category}</p>
@@ -17,9 +22,11 @@ const Adverts = (props) => {
         <p>Type : </p>
         <p>{advert.type}</p>
       </div>
-      <div className="mb">
+      <div className="divider mb"></div>
+      <div className="mb content-adverts">
         {advert.post_content}
       </div>
+      <div className="divider mb"></div>
       <div className="actions">
         <div>
           <button>Voir tout</button>
