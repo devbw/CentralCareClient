@@ -16,15 +16,18 @@ const Signin = () => {
       setShowError(true);
       return error;
     }
-    axios.post('', {
-      email,
+    axios.post('https://centralcare.srpweb.fr/auth/local', {
+      identifier: email,
       password
     })
-    .then(() => {
-      console.log('Connexion réussie');
+    .then((res) => {
+      console.log('Connexion réussie, token :', res.data.jwt);
+      console.log('Profile', res.data.user);
+      document.cookie = `token=${res.data.jwt}; path=/; max-age= 1209600`;
     })
     .catch((error) => {
-      console.log(error);
+      setError(error.response.data.message[0].messages[0].message);
+      setShowError(true);
     })
   }
 

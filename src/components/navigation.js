@@ -26,16 +26,16 @@ const navigation = () => {
       </nav>
       <div className="nav-bars">
         <NavLink exact to="/" className="resp-icon" activeClassName="resp-active">
-          <i class="fas fa-home"></i>
+          <i className="fas fa-home"></i>
         </NavLink>
         <NavLink exact to="/annonces" className="resp-icon" activeClassName="resp-active">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
         </NavLink>
         <NavLink exact to="/" className="resp-icon" activeClassName="resp-active">
-          <i class="far fa-plus-square"></i>
+          <i className="far fa-plus-square"></i>
         </NavLink>
         <NavLink exact to="/" className="resp-icon" activeClassName="resp-active">
-          <i class="far fa-user-circle"></i>
+          <i className="far fa-user-circle"></i>
         </NavLink>
       </div>
     </div>

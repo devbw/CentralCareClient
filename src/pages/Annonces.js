@@ -49,7 +49,7 @@ const Annonces = () => {
 					<Adverts advert={advert} key={advert.id} />
 				))}
 			</div>
-			<Footer />
+      <Footer />
 		</div>
 	);
 };

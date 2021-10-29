@@ -45,20 +45,21 @@ const Signupuser = () => {
       return error;
     }
     axios
-      .post("http://localhost:3003/users", {
+      .post("https://centralcare.srpweb.fr/auth/local/register", {
+        username: firstname,
         firstname,
         lastname,
         email,
         password,
-        date: new Date(),
       })
-      .then(() => {
-        console.log("Utilisateur inscrit avec succès !");
+      .then((res) => {
+        console.log("User token", res.data.jwt);
+        console.log("User profile", res.data.user);
         setShowError(false);
         setError("");
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.response);
       });
   };
 
