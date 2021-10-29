@@ -10,7 +10,7 @@ const Adverts = (props) => {
           <span>à {advert.city},</span>
           <span>&#x20; {advert.postal_code}</span>
         </div>
-        <i className="fas fa-ellipsis-h"></i>
+        <i className="fas fa-ellipsis-h" title="Options"></i>
       </div>
       <h3 className="mb">{advert.title}</h3>
       <div className="divider mb"></div>
@@ -32,7 +32,7 @@ const Adverts = (props) => {
           <button>Voir tout</button>
           <button>Répondre</button>
         </div>
-          <i className="far fa-heart"></i>
+          <i className="far fa-heart" title="Ajouter aux favoris"></i>
       </div>
     </div>
   );
