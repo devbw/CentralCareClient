@@ -41,10 +41,30 @@
   }
 
   .nav-bars {
-    color: white;
     display: none;
+    text-decoration: none;
     @media screen and (max-width: 800px) {
       display: flex;
+      bottom: 0;
+      position: fixed;
+      background: $white;
+      width: 100%;
+      left: 0;
+      .resp-icon{
+        width: 25%;
+        text-align: center;
+        transition: .3s;
+        padding: .3rem 0;
+      }
+      .fas, .far{
+        color: $color-2;
+      }
+      .resp-active{
+        background: $linear;
+        .fas, .far{
+          color: $white;
+        }
+      }
     }
   }
 }

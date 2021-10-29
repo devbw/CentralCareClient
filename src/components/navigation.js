@@ -25,7 +25,18 @@ const navigation = () => {
         </NavLink>
       </nav>
       <div className="nav-bars">
-        <i className="fas fa-bars"></i>
+        <NavLink exact to="/" className="resp-icon" activeClassName="resp-active">
+          <i class="fas fa-home"></i>
+        </NavLink>
+        <NavLink exact to="/annonces" className="resp-icon" activeClassName="resp-active">
+          <i class="fas fa-search"></i>
+        </NavLink>
+        <NavLink exact to="/" className="resp-icon" activeClassName="resp-active">
+          <i class="far fa-plus-square"></i>
+        </NavLink>
+        <NavLink exact to="/" className="resp-icon" activeClassName="resp-active">
+          <i class="far fa-user-circle"></i>
+        </NavLink>
       </div>
     </div>
   );
