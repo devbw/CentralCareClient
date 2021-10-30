@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Cookies from 'js-cookie'
 import About from '../../pages/About';
 import Accueil from '../../pages/Accueil'
 import Annonces from '../../pages/Annonces';
@@ -9,7 +10,24 @@ import Contact from '../../pages/Contact';
 import Createpost from '../../pages/Createpost';
 import Partenaires from '../../pages/Partenaires';
 
-const index = () => {
+const Index = () => {
+
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    getCookie();
+  }, [])
+
+  const getCookie = () => {
+    let cookie = Cookies.get('token');
+
+    if(cookie === undefined) {
+      setIsLogged(false);
+    } else {
+      setIsLogged(true);
+    }
+  }
+
   return (
     <Router>
       <Switch>
@@ -27,4 +45,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
