@@ -1,15 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
-import Footer from '../components/footer';
+import { NavLink } from "react-router-dom";
 import axios from 'axios';
 import Adverts from '../components/Adverts/Adverts';
+import Cookies from 'js-cookie';
 
 const Annonces = () => {
 	const [adverts, setAdverts] = useState([]);
+  const [loggedCookie, setLoggedCookie] = useState(false);
 
 	useEffect(() => {
+    getCookie();
 		getAdverts();
 	}, []);
+
+  const getCookie = () => {
+    let cookie = Cookies.get('token');
+
+    if(cookie === undefined) {
+      setLoggedCookie(false);
+    } else {
+      setLoggedCookie(true);
+    }
+  }
 
 	const getAdverts = () => {
 		axios
@@ -26,11 +39,19 @@ const Annonces = () => {
 	return (
 		<div className='container-adverts'>
 			<Navigation />
+      <h2>Trouvez votre mission sans frais d'agence !</h2>
 			<div className='adverts-filter'>
-				<button className='adverts-publish'>
-					<i className='fas fa-plus'></i>
-					PUBLIER
-				</button>
+        {loggedCookie ? <NavLink exact to="/poster" activeClassName="nav-active">
+          <button className='adverts-publish'>
+            <i className='fas fa-plus'></i>
+            PUBLIER
+          </button>
+        </NavLink> : <NavLink exact to="/login-register" activeClassName="nav-active">
+          <button className='adverts-publish'>
+            Connectez-vous pour publier
+          </button>
+        </NavLink>}
+
 				<input type='text' className='search' placeholder='Votre recherche' />
 				<input
 					type='text'
@@ -49,7 +70,6 @@ const Annonces = () => {
 					<Adverts advert={advert} key={advert.id} />
 				))}
 			</div>
-      <Footer />
 		</div>
 	);
 };

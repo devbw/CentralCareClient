@@ -22,8 +22,6 @@ const Signin = () => {
       password
     })
     .then((res) => {
-      console.log('Connexion réussie, token :', res.data.jwt);
-      console.log('Profile', res.data.user);
       Cookies.set('token', res.data.jwt, {expires: 14});
     })
     .catch((error) => {

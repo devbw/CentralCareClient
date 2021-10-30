@@ -10,7 +10,7 @@
   z-index: 1;
 
   @media screen and (max-width: 800px) {
-    padding: 0.1rem 1rem;
+    padding: 0.4rem 1rem;
   }
 
   .centralcare {
@@ -30,6 +30,7 @@
     color: white;
     margin: 0 0.7rem;
     transition: 0.8s;
+    font-size: .9rem;
     &:hover {
       transform: translateY(5px);
       color: $color-2;
