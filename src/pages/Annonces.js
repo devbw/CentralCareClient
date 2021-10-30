@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navigation from '../components/navigation';
+import Navigation from '../components/Navigation';
 import Footer from '../components/footer';
 import axios from 'axios';
 import Adverts from '../components/Adverts/Adverts';

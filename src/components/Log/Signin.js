@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import validator from "validator";
 import Error from "../errors/Error";
+import Cookies from 'js-cookie'
 
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ const Signin = () => {
     .then((res) => {
       console.log('Connexion réussie, token :', res.data.jwt);
       console.log('Profile', res.data.user);
-      document.cookie = `token=${res.data.jwt}; path=/; max-age= 1209600`;
+      Cookies.set('token', res.data.jwt, {expires: 14});
     })
     .catch((error) => {
       setError(error.response.data.message[0].messages[0].message);

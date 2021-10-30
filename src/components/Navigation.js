@@ -1,7 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { NavLink } from "react-router-dom";
+import Cookies from 'js-cookie';
 
-const navigation = () => {
+const Navigation = () => {
+  useEffect(() => {
+    getCookie();
+  }, [])
+
+  const getCookie = () => {
+    let cookie = Cookies.get('token');
+    console.log(cookie)
+  }
+
   return (
     <div className="navigation-bar">
       <NavLink exact to="/">
@@ -31,10 +41,10 @@ const navigation = () => {
         <NavLink exact to="/annonces" className="resp-icon" activeClassName="resp-active">
           <i className="fas fa-search"></i>
         </NavLink>
-        <NavLink exact to="/" className="resp-icon" activeClassName="resp-active">
+        <NavLink exact to="/poster" className="resp-icon" activeClassName="resp-active">
           <i className="far fa-plus-square"></i>
         </NavLink>
-        <NavLink exact to="/" className="resp-icon" activeClassName="resp-active">
+        <NavLink exact to="/mon-compte" className="resp-icon" activeClassName="resp-active">
           <i className="far fa-user-circle"></i>
         </NavLink>
       </div>
@@ -42,4 +52,4 @@ const navigation = () => {
   );
 };
 
-export default navigation;
+export default Navigation;
