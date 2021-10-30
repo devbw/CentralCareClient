@@ -58,6 +58,7 @@ const Signin = () => {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
+      {showError ? <Error error={error} /> : ''}
       <button type="submit" onClick={login}>
         <i className="fas fa-rocket"></i>
         CONNEXION

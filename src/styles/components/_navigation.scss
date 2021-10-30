@@ -12,7 +12,10 @@
   @media screen and (max-width: 800px) {
     padding: 0.4rem 1rem;
   }
-
+  nav{
+    display: flex;
+    align-items: center;
+  }
   .centralcare {
     color: white;
     font-size: 1.5rem;

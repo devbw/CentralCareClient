@@ -49,7 +49,7 @@ const Annonces = () => {
           </button>
         </NavLink> : <NavLink exact to="/login-register" activeClassName="nav-active">
           <button className='adverts-publish'>
-            Connectez-vous pour publier
+            CONNECTEZ-VOUS POUR PUBLIER
           </button>
         </NavLink>}
 

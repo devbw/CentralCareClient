@@ -117,6 +117,7 @@ const Signupuser = () => {
             J'ai lu et j'accepte les <a href="/">CGU</a>
           </span>
         </div>
+        {showError ? <Error error={error} /> : ''}
         <button type="submit" onClick={signup}>
           <i className="fas fa-user-plus"></i>
           M'INSCRIRE
