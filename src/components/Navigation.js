@@ -51,6 +51,9 @@ const Navigation = () => {
         <NavLink exact to="/contact" activeClassName="nav-active">
           <p className="nav-item">Contact</p>
         </NavLink>
+        <NavLink exact to="/login-register" activeClassName="nav-active">
+          <p className="nav-item-connect">Inscription/Connexion</p>
+        </NavLink>
       </nav>}
 
       {loggedCookie ? <div className="nav-bars">
@@ -73,11 +76,11 @@ const Navigation = () => {
         <NavLink exact to="/annonces" className="resp-icon" activeClassName="resp-active">
           <i className="fas fa-search"></i>
         </NavLink>
-        <NavLink exact to="/poster" className="resp-icon" activeClassName="resp-active">
-          <i className="fas fa-space-shuttle"></i>
+        <NavLink exact to="/login-register" className="resp-icon" activeClassName="resp-active">
+          <span>Connexion</span>
         </NavLink>
-        <NavLink exact to="/mon-compte" className="resp-icon" activeClassName="resp-active">
-          <i className="fas fa-space-shuttle"></i>
+        <NavLink exact to="/login-register" className="resp-icon" activeClassName="resp-active">
+          <span>Inscription</span>
         </NavLink>
       </div>}
 

@@ -36,7 +36,14 @@
       color: $color-2;
     }
   }
-
+  .nav-item-connect{
+    color: $color-2;
+    font-size: .9rem;
+    background: $white;
+    border-radius: 10px;
+    padding: .2rem .8rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
   .nav-active p {
     color: $color-2;
   }
@@ -55,14 +62,25 @@
         width: 25%;
         text-align: center;
         transition: .3s;
-        padding: .3rem 0;
+        padding: .6rem 0;
+        span{
+          color: $white;
+          font-size: .8rem;
+          background: $color-2;
+          border-radius: 10px;
+          padding: .4rem .5rem;
+        }
       }
       .fas, .far{
         color: $color-2;
+        font-size: 1.3rem;
       }
       .resp-active{
         background: $linear;
         .fas, .far{
+          color: $white;
+        }
+        span{
           color: $white;
         }
       }

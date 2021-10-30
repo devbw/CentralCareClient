@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import axios from 'axios';
 import Adverts from '../components/Adverts/Adverts';
 import Cookies from 'js-cookie';
+import Footer from '../components/footer'
 
 const Annonces = () => {
 	const [adverts, setAdverts] = useState([]);
@@ -70,6 +71,7 @@ const Annonces = () => {
 					<Adverts advert={advert} key={advert.id} />
 				))}
 			</div>
+      <Footer />
 		</div>
 	);
 };
