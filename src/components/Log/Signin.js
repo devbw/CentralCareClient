@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useHistory } from "react-router-dom"
 import axios from 'axios';
 import validator from "validator";
 import Error from "../errors/Error";
@@ -9,6 +10,7 @@ const Signin = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
+  const history = useHistory();
 
   const login = (e) => {
     e.preventDefault();
@@ -23,6 +25,9 @@ const Signin = () => {
     })
     .then((res) => {
       Cookies.set('token', res.data.jwt, {expires: 14});
+    })
+    .then(() => {
+      history.push('/annonces');
     })
     .catch((error) => {
       setError(error.response.data.message[0].messages[0].message);

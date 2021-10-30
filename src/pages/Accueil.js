@@ -54,7 +54,7 @@ const Accueil = () => {
           </div>
         </div>
         <div className="home-info">
-          <i className="fas fa-atom"></i>
+          <i className="fas fa-wifi"></i>
           <div className="home-card">
             <h3>Pourquoi cette plateforme ?</h3>
             <p>
@@ -76,7 +76,7 @@ const Accueil = () => {
           </div>
         </div>
         <div className="home-info">
-          <i className="fas fa-rocket"></i>
+          <i className="fas fa-people-carry"></i>
           <div className="home-card">
             <h3>Intervenant ? Bénéficiaire ?</h3>
             <p>
@@ -87,18 +87,17 @@ const Accueil = () => {
           </div>
         </div>
         <div className="home-info">
-          <i className="fas fa-rocket"></i>
+          <i className="fas fa-paper-plane"></i>
           <div className="home-card">
             <h3>Nous contacter</h3>
             <p>
-              En partenariat avec Expairtise Pairformhand, chez CentralCare nous
-              pensons que trouver un travail doit être facile, accessible et
-              gratuit. Découvrez-en plus dans la section Qui sommes-nous.
+              Une question ? Un problème ? Une demande ?
+              C'est ici que ça se passe ! N'hésitez pas et envoyez-nous un message !
             </p>
           </div>
         </div>
         <div className="home-info">
-          <i className="fas fa-rocket"></i>
+        <i className="fas fa-handshake"></i>
           <div className="home-card">
             <h3>Nos Partenaires</h3>
             <p>
