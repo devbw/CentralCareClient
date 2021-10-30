@@ -45,6 +45,17 @@ const Accueil = () => {
         <div className="home-info">
           <i className="fas fa-atom"></i>
           <div className="home-card">
+            <h3>Qui sommes-nous ?</h3>
+            <p>
+              En partenariat avec Expairtise Pairformhand, chez CentralCare nous
+              pensons que trouver un travail doit être facile, accessible et
+              gratuit. Découvrez-en plus dans la section Qui sommes-nous.
+            </p>
+          </div>
+        </div>
+        <div className="home-info">
+          <i className="fas fa-atom"></i>
+          <div className="home-card">
             <h3>Pourquoi cette plateforme ?</h3>
             <p>
               En partenariat avec Expairtise Pairformhand, chez CentralCare nous
@@ -67,7 +78,29 @@ const Accueil = () => {
         <div className="home-info">
           <i className="fas fa-rocket"></i>
           <div className="home-card">
-            <h3>Pourquoi s'abonner ?</h3>
+            <h3>Intervenant ? Bénéficiaire ?</h3>
+            <p>
+              En partenariat avec Expairtise Pairformhand, chez CentralCare nous
+              pensons que trouver un travail doit être facile, accessible et
+              gratuit. Découvrez-en plus dans la section Qui sommes-nous.
+            </p>
+          </div>
+        </div>
+        <div className="home-info">
+          <i className="fas fa-rocket"></i>
+          <div className="home-card">
+            <h3>Nous contacter</h3>
+            <p>
+              En partenariat avec Expairtise Pairformhand, chez CentralCare nous
+              pensons que trouver un travail doit être facile, accessible et
+              gratuit. Découvrez-en plus dans la section Qui sommes-nous.
+            </p>
+          </div>
+        </div>
+        <div className="home-info">
+          <i className="fas fa-rocket"></i>
+          <div className="home-card">
+            <h3>Nos Partenaires</h3>
             <p>
               En partenariat avec Expairtise Pairformhand, chez CentralCare nous
               pensons que trouver un travail doit être facile, accessible et

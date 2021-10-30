@@ -1,15 +1,22 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { NavLink } from "react-router-dom";
 import Cookies from 'js-cookie';
 
 const Navigation = () => {
+  const [loggedCookie, setLoggedCookie] = useState(false);
+
   useEffect(() => {
     getCookie();
   }, [])
 
   const getCookie = () => {
     let cookie = Cookies.get('token');
-    console.log(cookie)
+
+    if(cookie === undefined) {
+      setLoggedCookie(false);
+    } else {
+      setLoggedCookie(true);
+    }
   }
 
   return (
@@ -24,17 +31,11 @@ const Navigation = () => {
         <NavLink exact to="/annonces" activeClassName="nav-active">
           <p className="nav-item">Annonces</p>
         </NavLink>
-        <NavLink exact to="/a-propos" activeClassName="nav-active">
-          <p className="nav-item">Qui sommes-nous</p>
-        </NavLink>
-        <NavLink exact to="/partenaires" activeClassName="nav-active">
-          <p className="nav-item">Partenaires</p>
-        </NavLink>
         <NavLink exact to="/contact" activeClassName="nav-active">
           <p className="nav-item">Contact</p>
         </NavLink>
       </nav>
-      <div className="nav-bars">
+      {loggedCookie ? <div className="nav-bars">
         <NavLink exact to="/" className="resp-icon" activeClassName="resp-active">
           <i className="fas fa-home"></i>
         </NavLink>
@@ -47,7 +48,21 @@ const Navigation = () => {
         <NavLink exact to="/mon-compte" className="resp-icon" activeClassName="resp-active">
           <i className="far fa-user-circle"></i>
         </NavLink>
-      </div>
+      </div> : <div className="nav-bars">
+        <NavLink exact to="/" className="resp-icon" activeClassName="resp-active">
+          <i className="fas fa-home"></i>
+        </NavLink>
+        <NavLink exact to="/annonces" className="resp-icon" activeClassName="resp-active">
+          <i className="fas fa-search"></i>
+        </NavLink>
+        <NavLink exact to="/poster" className="resp-icon" activeClassName="resp-active">
+          <i className="fas fa-space-shuttle"></i>
+        </NavLink>
+        <NavLink exact to="/mon-compte" className="resp-icon" activeClassName="resp-active">
+          <i className="fas fa-space-shuttle"></i>
+        </NavLink>
+      </div>}
+
     </div>
   );
 };
