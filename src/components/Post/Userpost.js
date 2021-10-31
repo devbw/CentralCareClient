@@ -1,16 +1,16 @@
 import React from 'react';
 
-const Adverts = (props) => {
-	const { advert } = props;
-	const date = new Date(advert.published_at);
+const Userpost = (props) => {
+	const { userpost } = props;
+	const date = new Date(userpost.published_at);
 
 	return (
-		<div className='adverts' key={advert.id}>
+		<div className='adverts' key={userpost.id}>
 			<div className='top-adverts mb'>
 				<div>
-					<span>{advert.users_permissions_user.firstname},&#x20;</span>
-					<span>à {advert.city}</span>
-					<span>&#x20; ({advert.postal_code}) &#x20;</span>
+					<span>{userpost.users_permissions_user.firstname},&#x20;</span>
+					<span>à {userpost.city}</span>
+					<span>&#x20; ({userpost.postal_code}) &#x20;</span>
 					<span>
 						- publié le{' '}
 						{date.toLocaleDateString('fr-FR', {
@@ -22,19 +22,19 @@ const Adverts = (props) => {
 				</div>
 				<i className='fas fa-ellipsis-h' title='Options'></i>
 			</div>
-			<h3 className='mb'>{advert.title}</h3>
+			<h3 className='mb'>{userpost.title}</h3>
 			<div className='divider mb'></div>
 			<div className='category-adverts mb'>
 				<p>Catégorie : </p>
-				<p>{advert.category}</p>
+				<p>{userpost.category}</p>
 			</div>
 			<div className='type-adverts mb'>
 				<p>Type : </p>
-				<p>{advert.type}</p>
+				<p>{userpost.type}</p>
 			</div>
 			<div className='divider mb'></div>
 			<div className='mb content-adverts'>
-				{advert.content.substring(0, 150)}
+				{userpost.content.substring(0, 150)}
 			</div>
 			<div className='divider mb'></div>
 			<div className='actions'>
@@ -48,4 +48,4 @@ const Adverts = (props) => {
 	);
 };
 
-export default Adverts;
+export default Userpost;

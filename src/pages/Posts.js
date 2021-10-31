@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import { NavLink } from "react-router-dom";
 import axios from 'axios';
-import Adverts from '../components/Adverts/Adverts';
+import Userpost from '../components/Post/Userpost';
 import Cookies from 'js-cookie';
 import Footer from '../components/footer'
 
-const Annonces = () => {
-	const [adverts, setAdverts] = useState([]);
+const Posts = () => {
+	const [post, setPost] = useState([]);
   const [loggedCookie, setLoggedCookie] = useState(false);
 
 	useEffect(() => {
     getCookie();
-		getAdverts();
+		getPost();
 	}, []);
 
   const getCookie = () => {
@@ -25,11 +25,11 @@ const Annonces = () => {
     }
   }
 
-	const getAdverts = () => {
+	const getPost = () => {
 		axios
 			.get('https://centralcare.srpweb.fr/annonces')
 			.then((res) => {
-				setAdverts(res.data);
+				setPost(res.data);
 				console.log(res.data);
 			})
 			.catch((err) => {
@@ -67,8 +67,8 @@ const Annonces = () => {
 				</div>
 			</div>
 			<div className='block-adverts'>
-				{adverts.map((advert) => (
-					<Adverts advert={advert} key={advert.id} />
+				{post.map((userpost) => (
+					<Userpost userpost={userpost} key={userpost.id} />
 				))}
 			</div>
       <Footer />
@@ -76,4 +76,4 @@ const Annonces = () => {
 	);
 };
 
-export default Annonces;
+export default Posts;

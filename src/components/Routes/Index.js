@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Cookies from 'js-cookie'
 import About from '../../pages/About';
 import Accueil from '../../pages/Accueil'
-import Annonces from '../../pages/Annonces';
+import Annonces from '../../pages/Posts';
 import Compte from '../../pages/Compte';
 import Connect from '../../pages/Connect'
 import Contact from '../../pages/Contact';
