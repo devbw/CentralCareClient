@@ -9,6 +9,7 @@ import Footer from '../components/footer'
 const Posts = () => {
 	const [post, setPost] = useState([]);
   const [loggedCookie, setLoggedCookie] = useState(false);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
     getCookie();
@@ -31,6 +32,7 @@ const Posts = () => {
 			.then((res) => {
 				setPost(res.data);
 				console.log(res.data);
+				setLoading(false);
 			})
 			.catch((err) => {
 				console.log(err);
@@ -66,7 +68,9 @@ const Posts = () => {
 					</button>
 				</div>
 			</div>
+			{loading ? <div className="container-spinner"><i className="fas fa-spinner"></i><p>Patience, nous récupérons les annonces !</p></div>: ''}
 			<div className='block-post'>
+
 				{post.map((userpost) => (
 					<Userpost userpost={userpost} key={userpost.id} />
 				))}

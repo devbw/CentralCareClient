@@ -46,6 +46,19 @@ h6 {
 	color: green;
 	font-weight: bold;
 }
+.fa-spinner{
+	font-size: 2.5rem;
+	color: $white;
+	animation : loadspinner 1.5s linear infinite;
+}
+@keyframes loadspinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
 .fade-in-bottom {
 	-webkit-animation: fade-in-bottom 1.5s cubic-bezier(0.39, 0.575, 0.565, 1)
 		both;
