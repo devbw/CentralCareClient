@@ -38,17 +38,17 @@ const Posts = () => {
 	};
 
 	return (
-		<div className='container-adverts'>
+		<div className='container-post'>
 			<Navigation />
       <h2>Trouvez votre mission sans frais d'agence !</h2>
-			<div className='adverts-filter'>
+			<div className='post-filter'>
         {loggedCookie ? <NavLink exact to="/poster" activeClassName="nav-active">
-          <button className='adverts-publish'>
+          <button className='post-publish'>
             <i className='fas fa-plus'></i>
             PUBLIER
           </button>
         </NavLink> : <NavLink exact to="/login-register" activeClassName="nav-active">
-          <button className='adverts-publish'>
+          <button className='post-publish'>
             CONNECTEZ-VOUS POUR PUBLIER
           </button>
         </NavLink>}
@@ -66,7 +66,7 @@ const Posts = () => {
 					</button>
 				</div>
 			</div>
-			<div className='block-adverts'>
+			<div className='block-post'>
 				{post.map((userpost) => (
 					<Userpost userpost={userpost} key={userpost.id} />
 				))}

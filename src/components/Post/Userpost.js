@@ -5,8 +5,8 @@ const Userpost = (props) => {
 	const date = new Date(userpost.published_at);
 
 	return (
-		<div className='adverts' key={userpost.id}>
-			<div className='top-adverts mb'>
+		<div className='post' key={userpost.id}>
+			<div className='top-post mb'>
 				<div>
 					<span>{userpost.users_permissions_user.firstname},&#x20;</span>
 					<span>à {userpost.city}</span>
@@ -24,16 +24,16 @@ const Userpost = (props) => {
 			</div>
 			<h3 className='mb'>{userpost.title}</h3>
 			<div className='divider mb'></div>
-			<div className='category-adverts mb'>
+			<div className='category-post mb'>
 				<p>Catégorie : </p>
 				<p>{userpost.category}</p>
 			</div>
-			<div className='type-adverts mb'>
+			<div className='type-post mb'>
 				<p>Type : </p>
 				<p>{userpost.type}</p>
 			</div>
 			<div className='divider mb'></div>
-			<div className='mb content-adverts'>
+			<div className='mb content-post'>
 				{userpost.content.substring(0, 150)}
 			</div>
 			<div className='divider mb'></div>

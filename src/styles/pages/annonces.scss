@@ -1,10 +1,10 @@
-.container-adverts{
+.container-post{
   h2{
     margin-top: 7rem;
     text-align: center;
     color: $white;
   }
-  .adverts-filter{
+  .post-filter{
     position: relative;
     margin: 5rem auto 3rem auto;
     width: 90%;
@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    .adverts-publish{
+    .post-publish{
       position: absolute;
       top: -5px;
       left:50%;
@@ -68,7 +68,7 @@
       }
     }
   }
-  .block-adverts{
+  .block-post{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
