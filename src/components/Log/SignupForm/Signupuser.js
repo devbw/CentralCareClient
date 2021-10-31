@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import validator from "validator";
 import Error from "../../errors/Error";
+import Spinner from '../../../components/spinner'
 
 const Signupuser = () => {
   const [firstname, setFirstname] = useState("");
@@ -10,6 +11,7 @@ const Signupuser = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const signup = (e) => {
     e.preventDefault();
@@ -44,6 +46,7 @@ const Signupuser = () => {
       setShowError(true);
       return error;
     }
+    setLoading(true);
     axios
       .post("https://centralcare.srpweb.fr/auth/local/register", {
         username: firstname,
@@ -52,11 +55,13 @@ const Signupuser = () => {
         email,
         password,
       })
-      .then((res) => {
-        console.log("User token", res.data.jwt);
-        console.log("User profile", res.data.user);
+      .then(() => {
+        setLoading(false);
         setShowError(false);
         setError("");
+      })
+      .then(() => {
+        window.location.reload(false);
       })
       .catch((error) => {
         console.log(error.response);
@@ -117,6 +122,7 @@ const Signupuser = () => {
             J'ai lu et j'accepte les <a href="/">CGU</a>
           </span>
         </div>
+        {loading ? <Spinner /> : '' }
         {showError ? <Error error={error} /> : ''}
         <button type="submit" onClick={signup}>
           <i className="fas fa-user-plus"></i>

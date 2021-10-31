@@ -4,12 +4,14 @@ import axios from 'axios';
 import validator from "validator";
 import Error from "../errors/Error";
 import Cookies from 'js-cookie'
+import Spinner from '../../components/spinner'
 
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
+  const [loading, setloading] = useState(false);
   const history = useHistory();
 
   const login = (e) => {
@@ -19,6 +21,7 @@ const Signin = () => {
       setShowError(true);
       return error;
     }
+    setloading(true);
     axios.post('https://centralcare.srpweb.fr/auth/local', {
       identifier: email,
       password
@@ -27,6 +30,7 @@ const Signin = () => {
       Cookies.set('token', res.data.jwt, {expires: 14});
     })
     .then(() => {
+      setloading(false);
       history.push('/annonces');
     })
     .catch((error) => {
@@ -59,6 +63,7 @@ const Signin = () => {
         required
       />
       {showError ? <Error error={error} /> : ''}
+      {loading ? <Spinner /> : ''}
       <button type="submit" onClick={login}>
         <i className="fas fa-rocket"></i>
         CONNEXION

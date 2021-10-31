@@ -5,6 +5,7 @@ import axios from 'axios';
 import Userpost from '../components/Post/Userpost';
 import Cookies from 'js-cookie';
 import Footer from '../components/footer'
+import Spinner from '../components/spinner';
 
 const Posts = () => {
 	const [post, setPost] = useState([]);
@@ -68,9 +69,8 @@ const Posts = () => {
 					</button>
 				</div>
 			</div>
-			{loading ? <div className="container-spinner"><i className="fas fa-spinner"></i><p>Patience, nous récupérons les annonces !</p></div>: ''}
+			{loading ? <Spinner />: ''}
 			<div className='block-post'>
-
 				{post.map((userpost) => (
 					<Userpost userpost={userpost} key={userpost.id} />
 				))}
