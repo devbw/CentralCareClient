@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import axios from 'axios';
 import Userpost from '../components/Post/Userpost';
 import Cookies from 'js-cookie';
-import Footer from '../components/footer'
 import Spinner from '../components/spinner';
 
 const Posts = () => {
@@ -75,7 +74,6 @@ const Posts = () => {
 					<Userpost userpost={userpost} key={userpost.id} />
 				))}
 			</div>
-      <Footer />
 		</div>
 	);
 };

@@ -5,7 +5,7 @@ const Userpost = (props) => {
 	const date = new Date(userpost.published_at);
 
 	return (
-		<div className='post' key={userpost.id}>
+		<div className='post fade-in-bottom' key={userpost.id}>
 			<div className='top-post mb'>
 				<div>
 					<span>{userpost.users_permissions_user.firstname},&#x20;</span>
