@@ -39,8 +39,10 @@ const Compte = () => {
   return (
     <div className="account-container">
       <Navigation />
-      <h1>Bienvenue, {username}</h1>
-      <p>Retrouvez ici toutes les informations liées à votre compte</p>
+      <div className="fade-in-bottom">
+        <h1>Bienvenue, {username}</h1>
+        <p>Retrouvez ici toutes les informations liées à votre compte</p>
+      </div>
     </div>
   );
 };
