@@ -44,19 +44,34 @@ const Compte = () => {
         <p>Retrouvez ici toutes les informations liées à votre compte</p>
       </div>
       <div className="account-block">
-        <h4>Mes informations</h4>
+        <div className="title-subblock">
+          <i className="fas fa-portrait"></i>
+          <h4>Mes informations</h4>
+        </div>
       </div>
       <div className="account-block">
-        <h4>Sécurité</h4>
+        <div className="title-subblock">
+          <i className="fas fa-shield-alt"></i>
+          <h4>Sécurité</h4>
+        </div>
       </div>
       <div className="account-block">
-        <h4>Supprimer</h4>
+        <div className="title-subblock">
+          <i className="fas fa-user-times"></i>
+          <h4>Supprimer</h4>
+        </div>
       </div>
       <div className="account-block">
-        <h4>Mes annonces</h4>
+        <div className="title-subblock">
+          <i className="far fa-clipboard"></i>
+          <h4>Mes annonces</h4>
+        </div>
       </div>
       <div className="account-block">
-        <h4>Mes favoris</h4>
+        <div className="title-subblock">
+          <i className="fas fa-heart"></i>
+          <h4>Mes favoris</h4>
+        </div>
       </div>
     </div>
   );
