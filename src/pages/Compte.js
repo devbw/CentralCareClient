@@ -39,9 +39,24 @@ const Compte = () => {
   return (
     <div className="account-container">
       <Navigation />
-      <div className="fade-in-bottom">
+      <div className="fade-in-bottom block-title">
         <h1>Bienvenue, {username}</h1>
         <p>Retrouvez ici toutes les informations liées à votre compte</p>
+      </div>
+      <div className="account-block">
+        <h4>Mes informations</h4>
+      </div>
+      <div className="account-block">
+        <h4>Sécurité</h4>
+      </div>
+      <div className="account-block">
+        <h4>Supprimer</h4>
+      </div>
+      <div className="account-block">
+        <h4>Mes annonces</h4>
+      </div>
+      <div className="account-block">
+        <h4>Mes favoris</h4>
       </div>
     </div>
   );
