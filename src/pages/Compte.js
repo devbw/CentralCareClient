@@ -6,11 +6,11 @@ import axios from 'axios';
 
 const Compte = () => {
 
-  const [username, setUsername] = useState('');
+  const [userInfos, setUserInfos] = useState([]);
 
   useEffect(() => {
     retrieveUser();
-  })
+  }, [])
 
   const getCookie = () => {
     return Cookies.get('token');
@@ -29,8 +29,8 @@ const Compte = () => {
       }
     })
     .then((res) => {
-      console.log(res.data.username)
-      setUsername(res.data.username)
+      setUserInfos(res.data)
+      console.log(userInfos.username)
     })
     .catch((err) => {
       console.log(err);
@@ -40,7 +40,7 @@ const Compte = () => {
     <div className="account-container">
       <Navigation />
       <div className="fade-in-bottom block-title">
-        <h1>Bienvenue, {username}</h1>
+        <h1>Bienvenue, {userInfos.username}</h1>
         <p>Retrouvez ici toutes les informations liées à votre compte</p>
       </div>
       <div className="account-block">
@@ -48,30 +48,35 @@ const Compte = () => {
           <i className="fas fa-portrait"></i>
           <h4>Mes informations</h4>
         </div>
-      </div>
-      <div className="account-block">
-        <div className="title-subblock">
-          <i className="fas fa-shield-alt"></i>
-          <h4>Sécurité</h4>
-        </div>
-      </div>
-      <div className="account-block">
-        <div className="title-subblock">
-          <i className="fas fa-user-times"></i>
-          <h4>Supprimer</h4>
-        </div>
+        <button>Modifier mes informations</button>
       </div>
       <div className="account-block">
         <div className="title-subblock">
           <i className="far fa-clipboard"></i>
           <h4>Mes annonces</h4>
         </div>
+        <button>Voir mes annonces</button>
       </div>
       <div className="account-block">
         <div className="title-subblock">
           <i className="fas fa-heart"></i>
           <h4>Mes favoris</h4>
         </div>
+        <button>Voir mes favoris</button>
+      </div>
+      <div className="account-block">
+        <div className="title-subblock">
+          <i className="fas fa-shield-alt"></i>
+          <h4>Sécurité</h4>
+        </div>
+        <button>Modifier mot de passe</button>
+      </div>
+      <div className="account-block">
+        <div className="title-subblock">
+          <i className="fas fa-user-times"></i>
+          <h4>Supprimer</h4>
+        </div>
+        <button>Supprimer mon compte</button>
       </div>
     </div>
   );
