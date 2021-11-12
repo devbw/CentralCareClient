@@ -30,7 +30,7 @@ const Compte = () => {
     })
     .then((res) => {
       setUserInfos(res.data)
-      console.log(userInfos.username)
+      console.log(userInfos)
     })
     .catch((err) => {
       console.log(err);
@@ -47,6 +47,11 @@ const Compte = () => {
         <div className="title-subblock">
           <i className="fas fa-portrait"></i>
           <h4>Mes informations</h4>
+        </div>
+        <div>
+          <p>Nom : {userInfos.lastname}</p>
+          <p>Prénom : {userInfos.firstname}</p>
+          <p>Email : {userInfos.email}</p>
         </div>
         <button>Modifier mes informations</button>
       </div>
