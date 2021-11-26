@@ -4,16 +4,35 @@
     text-align: center;
   }
   .postform-container{
-    text-align: center;
     background: $white;
     border-radius: 10px;
     padding: 1rem;
+    width: 90%;
     max-width: 600px;
     margin: 2rem auto;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      width: 90%;
+      input{
+        border-radius: 10px;
+        padding: 1rem 2rem;
+        margin-bottom: 1rem;
+        border: 2px $color-2 solid;
+        color: $color-2;
+        width: 90%;
+        &::placeholder{
+          color: $color-2;
+        }
+      }
+      label{
+        color: rgba(0, 0, 0, 0.75);
+      }
+    }
   }
 }
