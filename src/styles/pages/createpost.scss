@@ -19,7 +19,7 @@
       justify-content: center;
       text-align: left;
       width: 90%;
-      input{
+      input, textarea{
         border-radius: 10px;
         padding: 1rem 2rem;
         margin-bottom: 1rem;
@@ -28,6 +28,8 @@
         width: 100%;
         &::placeholder{
           color: $color-2;
+          opacity: .7;
+          font-family: 'Poppins', sans-serif;
         }
       }
       label{
