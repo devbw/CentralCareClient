@@ -1,11 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Navigation from "../components/Navigation";
 
 const Createpost = () => {
-
-  const [title, setTitle] = useState('');
-  const [postContent, setPostContent] = useState('');
-  const [city, setCity] = useState('');
+  const [title, setTitle] = useState("");
+  const [postContent, setPostContent] = useState("");
+  const [city, setCity] = useState("");
 
   return (
     <div className="create-container">
@@ -43,6 +42,16 @@ const Createpost = () => {
             onChange={(e) => setCity(e.target.value)}
             required
           />
+          <label htmlFor="price">Prix €/h</label>
+          <input
+            type="range"
+            name="price"
+            id="price"
+            placeholder="10€/h"
+            min="8"
+            max="30"
+          />
+          <button type="submit">Poster</button>
         </form>
       </div>
     </div>
