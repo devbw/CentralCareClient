@@ -1,20 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const Createpost = () => {
   const [title, setTitle] = useState("");
   const [postContent, setPostContent] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
+  const [cookie, setCookie] = useState("");
+
+  useEffect(() => {
+    getCookie();
+  }, [])
+
+  const getCookie = () => {
+    setCookie(Cookies.get('token'));
+  }
 
   const publishPost = (e) => {
     e.preventDefault();
-    axios.post('https://www.facebook.com/', {
+    axios.post('https://centralcare.srpweb.fr/annonces', {
       title,
-      postContent,
+      content : postContent,
       city,
-      price
+      price,
+      category
     })
     .then((res) => {
       console.log(res);
@@ -40,16 +52,26 @@ const Createpost = () => {
             onChange={(e) => setTitle(e.target.value)}
             required
           />
-          <label htmlFor="story">Contenu de l'annonce</label>
+          <label htmlFor="content">Contenu de l'annonce</label>
           <textarea
-            id="story"
-            name="story"
+            id="content"
+            name="content"
             rows="5"
             cols="33"
             placeholder="Je propose mes services de..."
             value={postContent}
             onChange={(e) => setPostContent(e.target.value)}
           ></textarea>
+          <label htmlFor="category">Type de contrat</label>
+          <input
+            type="text"
+            name="category"
+            id="category"
+            placeholder="CDI, CDD..."
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            required
+          />
           <label htmlFor="city">Ville</label>
           <input
             type="text"

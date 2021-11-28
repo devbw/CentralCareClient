@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom"
 import axios from 'axios';
 import validator from "validator";
 import Error from "../errors/Error";
-import Cookies from 'js-cookie'
-import Spinner from '../../components/spinner'
+import Cookies from 'js-cookie';
+import Spinner from '../../components/spinner';
 
 const Signin = () => {
   const [email, setEmail] = useState("");
