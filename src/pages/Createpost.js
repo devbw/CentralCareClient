@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
-import axios from 'axios';
-import Cookies from 'js-cookie';
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const Createpost = () => {
   const [title, setTitle] = useState("");
@@ -13,28 +13,37 @@ const Createpost = () => {
 
   useEffect(() => {
     getCookie();
-  }, [])
+  }, []);
 
   const getCookie = () => {
-    setCookie(Cookies.get('token'));
-  }
+    setCookie(Cookies.get("token"));
+  };
 
   const publishPost = (e) => {
     e.preventDefault();
-    axios.post('https://centralcare.srpweb.fr/annonces', {
-      title,
-      content : postContent,
-      city,
-      price,
-      category
-    })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.error(err);
-    })
-  }
+    axios
+      .post(
+        "https://centralcare.srpweb.fr/annonces",
+        {
+          headers: {
+            Authorization: `Bearer ${cookie}`,
+          },
+        },
+        {
+          title,
+          content: postContent,
+          city,
+          price,
+          category,
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
   return (
     <div className="create-container">
@@ -95,7 +104,9 @@ const Createpost = () => {
             required
           />
           <span>{price}€/h</span>
-          <button type="submit" onClick={publishPost}>Poster</button>
+          <button type="submit" onClick={publishPost}>
+            Poster
+          </button>
         </form>
       </div>
     </div>
